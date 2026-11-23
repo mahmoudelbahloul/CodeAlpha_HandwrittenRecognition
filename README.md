@@ -40,7 +40,7 @@ The three ensemble members score 0.9010, 0.9018 and 0.9026 on their own; averagi
 
 What worked:
 - **BatchNorm and a deeper network:** +1.6 points over the baseline at the same 8 epochs.
-- **Longer training with a learning-rate schedule:** another +0.5 points. The control run E1b shows how much of the gain is simply "more epochs".
+- **Longer training with a learning-rate schedule:** another +1.0 point (E1 0.8914 -> E3b 0.9010). The control run E1b (more epochs, no schedule, 0.8963) shows that about half of it is simply "more epochs".
 - **Ensembling:** about +0.2 to +0.4 points over a single model.
 
 What did **not** work: **data augmentation** (random rotation, shift and zoom) made the model *worse*, both strong (E2, E3) and mild (E3c). A likely reason, not tested here: EMNIST images are already centred and size-normalised, so random shifts and zooms create training images that look different from the test images. Without augmentation the model was also much faster to train (3.6 min vs 8 min).
